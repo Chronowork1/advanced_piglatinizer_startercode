@@ -1,0 +1,22 @@
+.borderBox {
+    border-style: solid;
+    border-color: black;
+    height: 150px;
+    width: 500px;
+
+}
+
+.wordBox {
+    width: 500px;
+    border-style: solid;
+    
+    
+}
+
+.Translate{
+   border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
