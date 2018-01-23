@@ -14,12 +14,13 @@ $(".translate").click(function(){
 
 function vowels(word){
     var firstVowels = word.charAt(0);
+    var newWord = word.substring(1);
         if (firstVowels === 'a' || firstVowels === 'e' 
         || firstVowels === 'i' || firstVowels === 'o' 
         || firstVowels === 'u')
             return word + 'yay';
-        } else {
-            
+        } else { 
+            return  + 'ay'
         }
     
     }
