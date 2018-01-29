@@ -8,11 +8,71 @@
 
 $(document).ready(function() {
     
-    $(".translate").click(function(){
-        var unite = $("input").val();
-        $(".outSpace").append(name); 
+        function ifVowels(word) {
+            if (word.charAt(0) === 'a' 
+            || word.charAt(0) === 'e' 
+            || word.charAt(0) === 'i'
+            || word.charAt(0) === 'o' 
+            || word.charAt(0) === 'u') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        function Yay(word) {
+           if (ifVowels(word) === true) {
+                return word + 'yay';
+            } else {
+                return false;
+            }
+        }
+        
+        function consonant(word) {
+            var vowels = word.charAt(0);
+            var otherWords = word.substring(1);
+            return otherWords + vowels + "ay";
+        }    
+        
+        function pigLatin(word){
+            if (ifVowels(word)) {
+                return Yay(word);
+            } else {
+                return consonant(word);
+            }
+        }
 
-        function vowels(word){
+     $(".highlight").click(function(){
+        var add = $(".wordBox").val();
+        $(".output").append(pigLatin(add)); 
+    });
+});
+        
+         /*var deletes = word.split();
+            var yay = 'yay';
+     
+            var pigLatin = otherWords + vowels + yay;*/
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*function vowels(word){
             var firstVowels = word.charAt(0);
             var newWord = word.substring(1);
             if (firstVowels === 'a' || firstVowels === 'e' 
@@ -29,6 +89,6 @@ $(document).ready(function() {
                 return newWord + thefirstChar +'ay';
         }
         
-});
+});*/
 
 
