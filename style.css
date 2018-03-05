@@ -3,24 +3,26 @@
     border-color: black;
     height: 150px;
     width: 500px;
-
 }
 
 .wordBox {
-    width: 500px;
+    width: 250px;
     border-style: solid;
-    
-    
+    padding: 10px;
+    font-size: 18px;
 }
 
-.Translate{
+.translate{
    border-radius: 5px;
+   background: red;
+   color: white;
+   padding: 5px;
 }
 
 h1 {
     text-align: center;
 }
 
-.middle {
-    text-align: center;
+body{
+    background-color: skyblue;
 }

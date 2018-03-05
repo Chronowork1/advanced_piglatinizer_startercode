@@ -21,11 +21,8 @@ $(document).ready(function() {
         }
         
         function Yay(word) {
-           if (ifVowels(word) === true) {
-                return word + 'yay';
-            } else {
-                return false;
-            }
+          word = word + "yay";
+          return word;
         }
         
         function consonant(word) {
@@ -35,17 +32,21 @@ $(document).ready(function() {
         }    
         
         function pigLatin(word){
-            if (ifVowels(word)) {
+            if (ifVowels(word) === true) {
                 return Yay(word);
             } else {
                 return consonant(word);
             }
         }
 
-     $(".highlight").click(function(){
+     $(".translate").click(function(){
         var add = $(".wordBox").val();
+        $(".output").html("");
         $(".output").append(pigLatin(add)); 
+        
     });
+    
+    
 });
         
          /*var deletes = word.split();
