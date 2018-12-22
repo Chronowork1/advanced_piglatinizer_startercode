@@ -1,28 +1,38 @@
 .borderBox {
-    border-style: solid;
-    border-color: black;
-    height: 150px;
-    width: 500px;
+  border-style: solid;
+  border-color: black;
+  height: 150px;
+  width: 500px;
 }
 
 .wordBox {
-    width: 250px;
-    border-style: solid;
-    padding: 10px;
-    font-size: 18px;
+  width: 250px;
+  border-style: solid;
+  padding: 10px;
+  font-size: 18px;
+  height: 38px;
+  border-radius: 5px;
 }
 
-.translate{
+.output {
+    text-align: center;
+    margin-top: 20px;
+    font-family: georgia;
+    font-size: 40px;
+}
+
+.translate {
    border-radius: 5px;
-   background: red;
-   color: white;
+   background-color: white;
+   border-color: black;
    padding: 5px;
+   width: 50px;
 }
 
+#highlight {
+    margin-top: 25px;
+    text-align:center;
+}
 h1 {
     text-align: center;
-}
-
-body{
-    background-color: skyblue;
 }
