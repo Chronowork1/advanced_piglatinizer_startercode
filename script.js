@@ -18,81 +18,103 @@ $(document).ready(function(){
   }
   console.log(consonants());
   */
-  function Vowels(){
-    let word = $("input").val();
-    let otherWords = word.substring(1);
-    if(word.charAt(0) === "a"|| word.charAt(0) === "e"|| word.charAt(0) ==="i" || word.charAt(0) ==="o" || word.charAt(0) === "u"){
-      return word = word + "yay";
-    } else {
-      return otherWords + word.charAt(0) + "ay";
-    }
-  }
   
-  function Sentences(){
-    let sentence = $("input").val();
-    let splitSentence = sentence.split(" ");
-    let otherWords = splitSentence.length.substring(1);
-    for (var i = 0; i < splitSentence.length; i++) {
-      if(splitSentence.length.charAt(0) === "a"|| splitSentence.length.charAt(0) === "e"|| splitSentence.length.charAt(0) ==="i" || splitSentence.length.charAt(0) ==="o" || splitSentence.length.charAt(0) === "u"){
-        return splitSentence.length = splitSentence.length + "yay";
+  //
+  /*function Vowels(){
+    let word = $("input").val();
+    let array = word.split(" ");
+    console.log(array);
+    let otherWords = word.substring(1);
+    if(array.length > 1){
+      if(word.charAt(0) === "a"|| word.charAt(0) === "e"|| word.charAt(0) ==="i" || word.charAt(0) ==="o" || word.charAt(0) === "u"){
+        for(let i = 0 ; i < array.length; i++){
+          console.log(array.join('yay ') + "yay");
+        }
       } else {
-        return otherWords + splitSentence.length.charAt(0) + "ay";
+        return otherWords + word.charAt(0) + "ay";
+      }
+    } else {
+      if(word.charAt(0) === "a"|| word.charAt(0) === "e"|| word.charAt(0) ==="i" || word.charAt(0) ==="o" || word.charAt(0) === "u"){
+        return word = word + "yay";
+      } else {
+        return otherWords + word.charAt(0) + "ay";
       }
     }
-    return Vowels[i];
+  }*/
+  
+  
+  /*function Sentences(){
+    let sentence = $("input").val();
+    let splitSentence = sentence.split(" ");
+    if(splitSentence.length > 1){
+      
+    }
+    //let arraySentence = splitSentence.length;
+    //this make a number.
+    //let otherWords = arraySentence.substring(1);
+    for (var i = 0; i < splitSentence.length; i++) {
+      if(splitSentence.charAt(0) === "a"|| splitSentence.charAt(0) === "e"|| splitSentence.charAt(0) ==="i" || splitSentence.charAt(0) ==="o" || splitSentence.charAt(0) === "u"){
+        return splitSentence = splitSentence + "yay";
+      } else {
+        return splitSentence = splitSentence + splitSentence.charAt(0) + "ay";
+      }
+    }
   }
+  console.log(Sentences());*/
 
   //var myStringArray = ["Hello","World"];
     //var arrayLength = myStringArray.length;
           //console.log(splitSentence[i]);
     //Do something
   
-  $(".translate").click(function(){
+  /*$(".translate").click(function(){
     console.log(Vowels());
     $(".output").text(Vowels());
-  });
-});
+  });*/
+
   
- /* function Yay(){
-    let word = $("input").val();
-    word = word + "yay";
-    return word;
-  }*/
-  
-
-
-
-    /*function ifVowels(word) {
-      if (word.charAt(0) === 'a' || word.charAt(0) === 'e' || word.charAt(0) === 'i'|| word.charAt(0) === 'o' || word.charAt(0) === 'u') {
+    function ifVowels(word) {
+      if (word.charAt(0) === 'a' || 
+      word.charAt(0) === 'e' || 
+      word.charAt(0) === 'i'|| 
+      word.charAt(0) === 'o' || 
+      word.charAt(0) === 'u') {
         return true;
       } else {
         return false;
       }
-    }*/
+    }
         
-    /*function Yay(word) {
+    function Yay(word) {
       word = word + "yay";
       return word;
-    }*/
+    }
         
-   /* function consonant(word) {
+    function consonant(word) {
       let vowels = word.charAt(0);
       let otherWords = word.substring(1);
       return otherWords + vowels + "ay";
-    }*/    
+    }    
         
-    /*function pigLatin(word){
+    function pigLatin(word){
       if (ifVowels(word) === true) {
         return Yay(word);
       } else {
         return consonant(word);
       }
-    }*/
+    }
     
+    function sentences(word){
+      let split = word.split(" ");
+      for(let i = 0; i < split.length; i++){
+        let translation = pigLatin(split[i]);
+        $(".output").append(translation + " ");
+      }
+    }
 
-     /*$(".translate").click(function(){
-        var add = $(".wordBox").val();
-        var split = add.split(" ");
-        $(".output").html(" ");
-        $(".output").append(pigLatin(add));
-    });*/
+     $(".translate").click(function(){
+        $(".output").html("");
+        var input = $(".wordBox").val();
+        $(".output").text(sentences(input));
+    });
+});
